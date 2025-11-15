@@ -5,7 +5,7 @@ body {
 }
 
 /* -----------------------
-   COLLAGE DESORDENADO
+   COLLAGE RESPONSIVO REAL
 ------------------------ */
 .collage {
     position: fixed;
@@ -17,27 +17,59 @@ body {
     z-index: -1;
 }
 
+/* CADA IMAGEN OCUPA TODA LA PANTALLA */
 .capa {
     position: absolute;
-    width: 55vw;
-    height: auto;
-    opacity: 0.70;
-    filter: contrast(1.35) saturate(1.25) brightness(0.92) blur(0.7px);
+    width: 130%;          /* más grande que la pantalla */
+    height: 130%;
     object-fit: cover;
+    opacity: 0.55;        /* collage suave */
+    filter: contrast(1.2) brightness(0.95) saturate(1.15);
     animation: mover 18s ease-in-out infinite alternate;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    translate: -50% -50%; /* siempre centrado */
 }
 
-/* POSICIONES DIFERENTES */
-.capa:nth-child(1) { top: -10vh; left: -5vw; transform: rotate(-5deg); }
-.capa:nth-child(2) { top: 20vh; right: -10vw; transform: rotate(4deg); }
-.capa:nth-child(3) { bottom: -15vh; left: 5vw; transform: rotate(3deg); }
-.capa:nth-child(4) { bottom: 10vh; right: 5vw; transform: rotate(-4deg); }
+/* VARIACIONES PARA EFECTO COLLAGE */
+.capa:nth-child(1) {
+    transform: rotate(-6deg);
+}
+.capa:nth-child(2) {
+    transform: rotate(4deg);
+    animation-delay: 3s;
+}
+.capa:nth-child(3) {
+    transform: rotate(-2deg);
+    animation-delay: 6s;
+}
+.capa:nth-child(4) {
+    transform: rotate(3deg);
+    animation-delay: 9s;
+}
 
-/* ANIMACIÓN SUAVE */
+/* Animación suave */
 @keyframes mover {
-    0% { transform: scale(1) translateY(0) rotate(0deg); }
-    100% { transform: scale(1.05) translateY(-15px) rotate(1deg); }
+    0% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1.18) rotate(1deg);
+    }
 }
+
+/* -----------------------
+   RESPONSIVE PARA TELÉFONO
+------------------------ */
+@media (max-width: 700px) {
+    .capa {
+        width: 160%;
+        height: 160%;
+        opacity: 0.45; /* más suave en teléfonos */
+    }
+}
+
 
 /* -----------------------
    CAJA DE MENSAJE
