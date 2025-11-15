@@ -5,69 +5,19 @@ body {
 }
 
 /* -----------------------
-   COLLAGE RESPONSIVO REAL
+   FONDO FIJO
 ------------------------ */
-.collage {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+body {
+    margin: 0;
     overflow: hidden;
-    z-index: -1;
-}
+    font-family: Arial, sans-serif;
 
-/* CADA IMAGEN OCUPA TODA LA PANTALLA */
-.capa {
-    position: absolute;
-    width: 130%;          /* más grande que la pantalla */
-    height: 130%;
-    object-fit: cover;
-    opacity: 0.55;        /* collage suave */
-    filter: contrast(1.2) brightness(0.95) saturate(1.15);
-    animation: mover 18s ease-in-out infinite alternate;
-    top: 50%;
-    left: 50%;
-    transform-origin: center;
-    translate: -50% -50%; /* siempre centrado */
-}
-
-/* VARIACIONES PARA EFECTO COLLAGE */
-.capa:nth-child(1) {
-    transform: rotate(-6deg);
-}
-.capa:nth-child(2) {
-    transform: rotate(4deg);
-    animation-delay: 3s;
-}
-.capa:nth-child(3) {
-    transform: rotate(-2deg);
-    animation-delay: 6s;
-}
-.capa:nth-child(4) {
-    transform: rotate(3deg);
-    animation-delay: 9s;
-}
-
-/* Animación suave */
-@keyframes mover {
-    0% {
-        transform: scale(1.1) rotate(0deg);
-    }
-    100% {
-        transform: scale(1.18) rotate(1deg);
-    }
-}
-
-/* -----------------------
-   RESPONSIVE PARA TELÉFONO
------------------------- */
-@media (max-width: 700px) {
-    .capa {
-        width: 160%;
-        height: 160%;
-        opacity: 0.45; /* más suave en teléfonos */
-    }
+    /* Fondo con imagen única */
+    background-image: url('img2.jpg'); /* tu imagen elegida */
+    background-size: cover;      /* cubre toda la pantalla */
+    background-position: center; /* centrado */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* opcional: fija al hacer scroll */
 }
 
 
