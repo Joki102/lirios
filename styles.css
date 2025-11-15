@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* -----------------------
+   COLLAGE DESORDENADO
+------------------------ */
+.collage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.capa {
+    position: absolute;
+    width: 55vw;
+    height: auto;
+    opacity: 0.70;
+    filter: contrast(1.35) saturate(1.25) brightness(0.92) blur(0.7px);
+    object-fit: cover;
+    animation: mover 18s ease-in-out infinite alternate;
+}
+
+/* POSICIONES DIFERENTES */
+.capa:nth-child(1) { top: -10vh; left: -5vw; transform: rotate(-5deg); }
+.capa:nth-child(2) { top: 20vh; right: -10vw; transform: rotate(4deg); }
+.capa:nth-child(3) { bottom: -15vh; left: 5vw; transform: rotate(3deg); }
+.capa:nth-child(4) { bottom: 10vh; right: 5vw; transform: rotate(-4deg); }
+
+/* ANIMACIÓN SUAVE */
+@keyframes mover {
+    0% { transform: scale(1) translateY(0) rotate(0deg); }
+    100% { transform: scale(1.05) translateY(-15px) rotate(1deg); }
+}
+
+/* -----------------------
+   CAJA DE MENSAJE
+------------------------ */
+.center-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    padding: 25px;
+    background: rgba(0,0,0,0.40);
+    border-radius: 15px;
+    width: 85%;
+    max-width: 420px;
+}
+
+/* TEXTO CLICKEABLE CON ANIMACIÓN */
+.mensaje-click {
+    font-size: 32px;
+    cursor: pointer;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px rgba(255,255,255,0.8);
+    animation: brillo 2.5s ease-in-out infinite alternate,
+               latido 3s ease-in-out infinite;
+}
+
+/* Brillo suave */
+@keyframes brillo {
+    0% { text-shadow: 0 0 6px rgba(255,255,255,0.5); }
+    100% { text-shadow: 0 0 18px rgba(255,255,255,1); }
+}
+
+/* Latido */
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+.btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 7px 16px;
+    font-size: 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #ddd;
+}
+
+/* -----------------------
+   EMOJIS CAYENDO
+------------------------ */
+.emoji {
+    position: absolute;
+    font-size: 28px;
+    animation: fall linear infinite;
+    user-select: none;
+    pointer-events: none;
+    z-index: 20;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* -----------------------
+        POPUP
+------------------------ */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px; /* evita que se pegue a los bordes en móviles */
+}
+
+.popup-content {
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    width: 90%;
+    max-width: 650px;
+    border-radius: 18px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    position: relative;
+    animation: popupIn 0.4s ease-out;
+    max-height: 80vh; /* evita que se salga en móviles */
+    overflow-y: auto; /* scroll elegante si hay mucho texto */
+    color: white;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* Animación */
+@keyframes popupIn {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* BOTÓN X */
+.close {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Texto del popup */
+.popup-text {
+    font-size: 18px;
+    margin-top: 10px;
+}

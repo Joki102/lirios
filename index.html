@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Vane</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- COLLAGE DESORDENADO -->
+<div class="collage">
+    <img src="img1.jpg" class="capa">
+    <img src="img2.jpg" class="capa">
+    <img src="img3.jpg" class="capa">
+    <img src="img4.jpg" class="capa">
+</div>
+
+<!-- Caja con texto y botones -->
+<div class="center-box">
+    <h1 class="mensaje-click" onclick="openPopup()">✨GRACIAS POR TODO...✨ ¿Lista? De clic aquí ✨</h1>
+    <button class="btn" onclick="playSong()">▶ Reproducir canción</button>
+    <button class="btn" onclick="showMessage()">💌 Mensaje bonito</button>
+</div>
+
+<!-- Audio -->
+<audio id="song" src="vl.mp3"></audio>
+
+<script src="script.js"></script>
+
+<!-- Ventana Emergente -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">×</span>
+
+        <p class="popup-text">
+            ✨ <b>Hola</b>, solo quiero que sepa que es una gran persona que admiro 💛<br><br>
+            y aprecio bastante. Gracias por todo, y discúlpeme… por todo, solo quiero que sepa que  
+            para mí usted es muy importante y especial 🫶<br><br>
+
+            Quiero que sea muy feliz, que cumpla sus sueños de los que me hablo. ✨<br>
+            Quiero verla triunfando, logrando todo lo que se proponga ⭐ aunque de lejitos jaja <br>
+            Tiene mucho por dar, no dude de sus conocimientos ni de usted 😌 la admiro mucho. <br><br>
+
+            Siga con esa hermosa sonrisa 😊  
+            y esos ojitos risueños 👀✨ bien preciosos<br><br>
+
+            Gracias por hacer especial una fecha que odiaba y por estar ahi para mi 
+            y espero recompensárselo de alguna manera 🫶 <br><br>
+
+            Sabe que cuenta conmigo para lo que sea 🤝 en las malas o buenas no dude en avisarme <br>
+            Gracias por compartir sus sentimientos y secretos conmigo, los atesoraré como algo muy valioso 💛<br><br>
+
+            Perdón de corazón 🫶 pido mis sinceras disculpas por todo... <br><br>
+
+            Cuídese, coma bien 🍽️, ore siempre 🙏  
+            y cuide a Tito jajaja <br><br>
+
+            La aprecio y la quiero bastante 💕<br>
+            Cuídese… y si Dios así lo quiere,  
+            nos volveremos a ver un día de estos 🌙✨<br><br>
+
+            Le deseo lo mejor:  
+            que sea muy feliz y tenga una vida llena de bendiciones ✨🙏💫  
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
